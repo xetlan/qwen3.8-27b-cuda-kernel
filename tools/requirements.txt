@@ -1,0 +1,9 @@
+# Python 3.12-3.14 (tools/tokenizer_export.py pins unicodedata 15.0-16.0)
+# converter (tools/convert.py) and file tools
+torch>=2.3
+numpy>=1.26
+safetensors>=0.4
+# tests against Hugging Face (tests/host/test_ref_vs_hf.py, tokenizer cases)
+transformers>=5.2
+tokenizers>=0.21
+jinja2

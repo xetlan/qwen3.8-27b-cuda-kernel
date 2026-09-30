@@ -1,0 +1,7 @@
+# Compile-check environment: nvcc for sm_86 on any host (no GPU needed to compile).
+# Used on development machines without an NVIDIA GPU:
+#   docker build -t qwen38-compile -f docker/Dockerfile.compile docker
+#   docker run --rm -v "$PWD":/src -w /src qwen38-compile tools/compile_check.sh
+FROM nvidia/cuda:12.8.1-devel-ubuntu24.04
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+      cmake ninja-build git ca-certificates python3 && rm -rf /var/lib/apt/lists/*
